@@ -2,7 +2,7 @@
 
 /* SETTINGS */
 $recipient = "glfreitas3@gmail.com";
-$subject = "New Message from Contact Form";
+$subject = "Novo contato enviado através do portfólio!";
 
 if($_POST){
 
@@ -38,6 +38,11 @@ if($_POST){
               "Message: $message";
 
   /* SEND EMAIL */
-  mail($recipient, $emailSubject, $mailBody, $headers);
+  try {
+    mail($recipient, $emailSubject, $mailBody, $headers);
+    echo 'true';
+  } catch (Exception $e) {
+    echo 'false';
+  }
 }
 ?>

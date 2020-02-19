@@ -400,27 +400,28 @@
 				
 })(jQuery);
 
-$(document).on('submit','#contato1',function(e){
-	//$("#contato").submit(function(e) {
+$(document).on('submit','#contato',function(e){
 
-		e.preventDefault(); // avoid to execute the actual submit of the form.
+	e.preventDefault(); // avoid to execute the actual submit of the form.
 
-		var form = $(this);
-		var url = form.attr('action');
+	var form = $(this);
+	var url = form.attr('action');
 	
-		$.ajax({
-			   type: "POST",
-			   url: url,
-			   data: form.serialize(), // serializes the form's elements.
-			   success: function(data)
-			   {
-				console.log(data);
-				//console.log('teste');
-				   //alert(data); // show response from the php script.
-				   
-			   }
-			 });
-	
-	
-	//});
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: form.serialize()
+		    
+	})
+	.done( function(data){
+		alert('Sua mensagem foi enviada, muito obrigado pelo contato.');
+		$('#name').val('');
+		$('#email').val('');
+		$('#message').val('');
+		$('#contact .close').click();
+	})  
+	.fail(function() {
+		alert( "Houve um problema ao enviar sua mensagem, caso o problema persista, por favor entre em contato através de uma das redes abaixo." );
+		$('#contact .close').click();
+	});
 });

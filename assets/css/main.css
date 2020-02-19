@@ -681,39 +681,14 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.main img {
-				width: 100%;
-			}
-		
-		.hover-img img{
-			-webkit-transition: all .4s;
-			transition: all .4s;
-			
-			/*
-			top: 50%;
-			left: 50%;
-			
-			position: absolute;
-			display: block;
-			max-width: 100%;
-			
-			-webkit-transition: all .4s;
-			transition: all .4s;
-			-webkit-transform: translate(-50%,-50%) scale(1);
-			-ms-transform: translate(-50%,-50%) scale(1);
-			transform: translate(-50%,-50%) scale(1);
-			*/
+		.image.main img {
+			width: 100%;
 		}
-
+		
 		.hover-img:hover img {
-			background-color: rgba(255, 255, 255, 0.075);
-			box-shadow: rgba(255, 255, 255, 0.075);
-			opacity: 1;
-			/*
-			-webkit-transform: translate(-50%,-50%) scale(1.2);
-			-ms-transform: translate(-50%,-50%) scale(1.2);
-			transform: translate(-50%,-50%) scale(1.2);
-			*/
+			-webkit-transition: all .4s;
+			transition: all .4s;
+			filter: brightness(100%);
 		}
 
 		@media screen and (max-width: 736px) {
